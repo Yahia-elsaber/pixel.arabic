@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بيكسل بالعربي — Pixel Arabi · Design · VFX · 3D</title>
+  <meta name="description" content="بيكسل بالعربي — قناة عربية متخصصة في التصميم، المؤثرات البصرية، والثلاثي الأبعاد." />
+  <meta name="theme-color" content="#060708" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="بيكسل بالعربي · Pixel Arabi" />
+  <meta property="og:description" content="Design · VFX · 3D — قناة عربية للمصممين ومحترفي الـ VFX والـ 3D." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon: inline SVG of pixel icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 5'%3E%3Crect width='5' height='5' fill='%23060708'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='3' y='4' width='1' height='1' fill='%2323D5AB'/%3E%3Crect x='4' y='4' width='1' height='1' fill='%2323D5AB'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- Decorative background layers -->
+  <div class="bg-layer bg-grid" aria-hidden="true"></div>
+  <div class="bg-layer bg-glow" aria-hidden="true"></div>
+  <div class="bg-layer bg-noise" aria-hidden="true"></div>
+
+  <!-- Vertical accent rails -->
+  <div class="rail rail-left" aria-hidden="true"></div>
+  <div class="rail rail-right" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============================== NAV ============================== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-brand" aria-label="بيكسل بالعربي">
+      <span class="brand-icon">
+        <svg viewBox="0 0 100 100" width="36" height="36" aria-hidden="true">
+          <use href="#pixelIcon" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-ar"><span>بيكسل </span><span class="cyan">بالعربي</span></span>
+        <span class="brand-en">PIXEL ARABI</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work"><span class="dot"></span><span data-en="Work">الأعمال</span><span class="mono">/work</span></a>
+      <a href="#about"><span class="dot"></span><span data-en="About">من أنا</span><span class="mono">/about</span></a>
+      <a href="#tools"><span class="dot"></span><span data-en="Tools">الأدوات</span><span class="mono">/tools</span></a>
+      <a href="#contact"><span class="dot"></span><span data-en="Contact">تواصل</span><span class="mono">/contact</span></a>
+    </nav>
+
+    <div class="nav-cta">
+      <div class="nav-controls">
+        <button class="toggle-btn lang-toggle" id="langToggle" type="button" aria-label="Switch language / تبديل اللغة">
+          <span class="lang-opt lang-ar">ع</span><span class="lang-sep">|</span><span class="lang-opt lang-en">EN</span>
+        </button>
+        <button class="toggle-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch theme / تبديل الثيم">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+      <span class="status">
+        <span class="status-dot"></span>
+        <span class="status-text" data-en="Available for work">متاح لاستقبال مشاريع</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="hero-meta hero-meta-tl">
+      <span class="meta-tag mono">— PORTFOLIO · 2026</span>
+    </div>
+
+    <div class="hero-meta hero-meta-tr">
+      <span class="meta-tag mono">N° 001 / WORK</span>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-icon-wrap" data-reveal="icon">
+        <div class="hero-icon-glow" aria-hidden="true"></div>
+        <svg viewBox="0 0 100 100" class="hero-icon" role="img" aria-label="Pixel Arabi logo">
+          <use href="#pixelIcon" />
+        </svg>
+        <!-- floating doodles around icon -->
+        <svg class="float-doodle d1" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleSparkle"/></svg>
+        <svg class="float-doodle d2" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleBurst"/></svg>
+        <svg class="float-doodle d3" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleDots"/></svg>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line-1" data-reveal="up" data-en="Pixel <span class='cyan'>Arabi</span>">
+          <span>بيكسل </span><span class="cyan">بالعربي</span>
+        </span>
+        <span class="line-2 mono" data-reveal="up">DESIGN &middot; VFX &middot; 3D</span>
+      </h1>
+
+      <p class="hero-sub" data-reveal="up" data-en="An Arabic channel for designers and VFX &amp; 3D artists — <span class='cyan'>from zero to pro</span>.">
+        قناة عربية للمصممين ومحترفي المؤثرات البصرية والثلاثي الأبعاد —
+        <span class="cyan">من الصفر للاحتراف</span>.
+      </p>
+
+      <div class="hero-cta" data-reveal="up">
+        <a href="#work" class="btn btn-primary">
+          <span class="btn-icon">▶</span>
+          <span data-en="Watch Reel">شاهد الـ Reel</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <span data-en="Get in Touch">تواصل معي</span>
+          <span class="btn-arrow">↖</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="#marquee" class="hero-scroll" aria-label="Scroll down">
+      <span class="mono">SCROLL</span>
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ============================== MARQUEE ============================== -->
+  <section class="marquee" id="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>DESIGN</span><span class="dot-sep"></span>
+      <span>VFX COMPOSITING</span><span class="dot-sep"></span>
+      <span>3D MODELING</span><span class="dot-sep"></span>
+      <span>BLENDER</span><span class="dot-sep"></span>
+      <span>NUKE</span><span class="dot-sep"></span>
+      <span>HOUDINI</span><span class="dot-sep"></span>
+      <span>AFTER EFFECTS</span><span class="dot-sep"></span>
+      <span>DAVINCI RESOLVE</span><span class="dot-sep"></span>
+      <span>MOTION DESIGN</span><span class="dot-sep"></span>
+      <span>SIMULATIONS</span><span class="dot-sep"></span>
+      <!-- repeat for seamless loop -->
+      <span>DESIGN</span><span class="dot-sep"></span>
+      <span>VFX COMPOSITING</span><span class="dot-sep"></span>
+      <span>3D MODELING</span><span class="dot-sep"></span>
+      <span>BLENDER</span><span class="dot-sep"></span>
+      <span>NUKE</span><span class="dot-sep"></span>
+      <span>HOUDINI</span><span class="dot-sep"></span>
+      <span>AFTER EFFECTS</span><span class="dot-sep"></span>
+      <span>DAVINCI RESOLVE</span><span class="dot-sep"></span>
+      <span>MOTION DESIGN</span><span class="dot-sep"></span>
+      <span>SIMULATIONS</span><span class="dot-sep"></span>
+    </div>
+  </section>
+
+  <!-- ============================== ABOUT ============================== -->
+  <section class="section about" id="about">
+    <header class="section-head">
+      <span class="section-num mono">02</span>
+      <h2 class="section-title">
+        <span data-en="About the creator">عن المنشئ</span>
+        <span class="mono section-en">/ about</span>
+      </h2>
+    </header>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-statement" data-reveal="up" data-en="I build <span class='cyan'>visual worlds</span> with <span class='accent'>pixels</span>, code and light — from a small idea to a full scene.">
+          أبني <span class="cyan">عوالم بصرية</span> بالـ<span class="accent">pixels</span> والأكواد والإضاءة — من فكرة صغيرة لمشهد كامل.
+        </p>
+        <div class="about-body" data-reveal="up">
+          <p data-en="Hey! I'm <span class='cyan'>Yahia El-Saber</span> — the person behind &quot;Pixel Arabi&quot;. An Arabic content creator passionate about everything moving-image: from 3D modeling to visual effects, motion, and <span class='mono'>compositing</span>.">
+            أهلاً! أنا <span class="cyan">يحيى الصابر</span> — الشخص اللي ورا
+            "بيكسل بالعربي". صانع محتوى عربي شغوف بكل ما يخص الصورة المتحركة:
+            من النمذجة ثلاثية الأبعاد للمؤثرات البصرية والموشن والـ
+            <span class="mono">compositing</span>.
+          </p>
+          <p data-en="It started with a simple idea — that serious technical VFX and 3D content should be available in Arabic, in an easy and enjoyable way. Today I share my experiences and tools with a growing community of Arab designers and creators.">
+            بدأت القناة بفكرة بسيطة — إن المحتوى التقني المحترم في الـ VFX والـ 3D
+            يبقى متاح بالعربي وبأسلوب سهل وممتع. دلوقتي بشارك تجاربي وأدواتي مع
+            مجتمع بيكبر كل يوم من المصممين وصنّاع المحتوى العرب.
+          </p>
+          <p data-en="I love work that sits between art and technique — <span class='mono'>procedural workflows</span>, <span class='mono'>simulations</span>, and everything that turns an idea in your head into a full scene on screen.">
+            بعشق الشغل اللي بيلاقي توازن بين الفن والتقنية — الـ
+            <span class="mono">procedural workflows</span>، الـ
+            <span class="mono">simulations</span>، وكل حاجة بتحوّل فكرة في دماغك
+            لمشهد كامل على الشاشة.
+          </p>
+          <a href="#contact" class="link-arrow">
+            <span data-en="Learn more">اعرف أكتر</span>
+            <span class="arrow">↖</span>
+          </a>
+        </div>
+      </div>
+
+      <figure class="about-photo" data-reveal="up">
+        <div class="photo-frame">
+          <!-- ضع صورتك في فولدر images باسم yahia.jpg (أو غيّر المسار تحت) -->
+          <img src="images/yahia.jpg" alt="يحيى الصابر — مؤسس بيكسل بالعربي"
+               onerror="this.style.display='none'; this.closest('.photo-frame').classList.add('no-img');" />
+          <svg class="photo-placeholder" viewBox="0 0 100 100" aria-hidden="true"><use href="#pixelIcon"/></svg>
+          <span class="photo-hint mono" data-en="Add your photo · images/yahia.jpg">ضع صورتك هنا · images/yahia.jpg</span>
+          <span class="photo-corner" aria-hidden="true"></span>
+        </div>
+        <figcaption class="photo-cap">
+          <span class="photo-name" data-en="Yahia El-Saber">يحيى الصابر</span>
+          <span class="photo-role mono" data-en="FOUNDER · Pixel Arabi">FOUNDER · بيكسل بالعربي</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <ul class="stats" data-reveal="stagger">
+      <li>
+        <span class="stat-row">
+          <span class="stat-num" data-count="6">6</span><span class="stat-plus">+</span>
+        </span>
+        <span class="stat-label mono">YEARS</span>
+        <span class="stat-ar">سنوات خبرة</span>
+      </li>
+      <li>
+        <span class="stat-row">
+          <span class="stat-num" data-count="40">40</span><span class="stat-plus">+</span>
+        </span>
+        <span class="stat-label mono">PROJECTS</span>
+        <span class="stat-ar">مشروع</span>
+      </li>
+      <li>
+        <span class="stat-row">
+          <span class="stat-num" data-count="12">12</span>
+        </span>
+        <span class="stat-label mono">TOOLS</span>
+        <span class="stat-ar">أداة احترافية</span>
+      </li>
+      <li>
+        <span class="stat-row">
+          <span class="stat-num" data-count="25">25</span><span class="stat-plus">+</span>
+        </span>
+        <span class="stat-label mono">EPISODES</span>
+        <span class="stat-ar">حلقة تعليمية</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============================== FEATURED ============================== -->
+  <section class="section featured-section" id="featured">
+    <header class="section-head">
+      <span class="section-num mono">03</span>
+      <h2 class="section-title">
+        <span data-en="Featured work">العمل المميز</span>
+        <span class="mono section-en">/ featured</span>
+      </h2>
+    </header>
+
+    <article class="featured-card" data-reveal="up">
+      <div class="featured-bg" aria-hidden="true"></div>
+      <div class="featured-accent" aria-hidden="true"></div>
+
+      <div class="featured-icon-wrap">
+        <div class="featured-icon-glow" aria-hidden="true"></div>
+        <svg viewBox="0 0 100 100" class="featured-icon"><use href="#pixelIcon"/></svg>
+      </div>
+
+      <div class="featured-content">
+        <span class="featured-kicker mono" data-en="— EPISODE 01">— EPISODE 01 · الحلقة الأولى</span>
+        <h3 class="featured-title" data-en="VFX <span class='cyan'>Fundamentals</span>">
+          <span>أساسيات</span>
+          <span class="cyan">الـ VFX</span>
+        </h3>
+        <p class="featured-sub" data-en="From zero to pro — everything you need to get started.">من الصفر للاحتراف — كل ما تحتاج معرفته للبدء.</p>
+        <div class="featured-tags">
+          <span class="tag">BLENDER</span>
+          <span class="tag">NUKE</span>
+          <span class="tag">HOUDINI</span>
+        </div>
+        <a href="#" class="featured-play" aria-label="Play featured episode">
+          <span class="play-circle"><span class="play-triangle"></span></span>
+          <span class="play-label" data-en="Watch Episode">شاهد الحلقة</span>
+        </a>
+      </div>
+
+      <span class="featured-badge" data-en="EP. 01">الحلقة ٠١</span>
+
+      <!-- decorative doodles -->
+      <svg class="featured-doodle fd1" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleSparkle"/></svg>
+      <svg class="featured-doodle fd2" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleDots"/></svg>
+    </article>
+  </section>
+
+  <!-- ============================== WORKS GRID ============================== -->
+  <section class="section works" id="work">
+    <header class="section-head">
+      <span class="section-num mono">04</span>
+      <h2 class="section-title">
+        <span data-en="Work">الأعمال</span>
+        <span class="mono section-en">/ work · 06</span>
+      </h2>
+    </header>
+
+    <div class="works-grid">
+
+      <article class="work-card" data-reveal="up">
+        <div class="work-thumb">
+          <span class="work-tag mono">VFX</span>
+          <svg viewBox="0 0 100 100" class="work-icon"><use href="#pixelIcon"/></svg>
+          <span class="work-num mono">/01</span>
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title" data-en="Smoke &amp; Fire Simulation">محاكاة الدخان والنار</h3>
+          <p class="work-desc mono">Smoke &amp; Fire Sim · Houdini</p>
+        </div>
+      </article>
+
+      <article class="work-card alt" data-reveal="up">
+        <div class="work-thumb">
+          <span class="work-tag mono">3D</span>
+          <svg viewBox="0 0 50 50" class="work-deco"><use href="#doodleBurst"/></svg>
+          <span class="work-num mono">/02</span>
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title" data-en="Product Modeling for Ads">نمذجة المنتجات الإعلانية</h3>
+          <p class="work-desc mono">Product Modeling · Blender</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-reveal="up">
+        <div class="work-thumb">
+          <span class="work-tag mono">COMPO</span>
+          <svg viewBox="0 0 50 50" class="work-deco"><use href="#doodleSparkle"/></svg>
+          <span class="work-num mono">/03</span>
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title" data-en="Cinematic Shot Compositing">تركيب لقطات سينمائية</h3>
+          <p class="work-desc mono">Cinematic Comp · Nuke</p>
+        </div>
+      </article>
+
+      <article class="work-card alt" data-reveal="up">
+        <div class="work-thumb">
+          <span class="work-tag mono">MOTION</span>
+          <svg viewBox="0 0 100 100" class="work-icon"><use href="#pixelIcon"/></svg>
+          <span class="work-num mono">/04</span>
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title" data-en="Arabic Motion Graphics">جرافيكس متحركة عربية</h3>
+          <p class="work-desc mono">Arabic Motion Graphics · AE</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-reveal="up">
+        <div class="work-thumb">
+          <span class="work-tag mono">RENDER</span>
+          <svg viewBox="0 0 50 50" class="work-deco"><use href="#doodleDiamond"/></svg>
+          <span class="work-num mono">/05</span>
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title" data-en="Realistic Architectural Render">رندر معماري واقعي</h3>
+          <p class="work-desc mono">Architectural Render · Corona</p>
+        </div>
+      </article>
+
+      <article class="work-card alt" data-reveal="up">
+        <div class="work-thumb">
+          <span class="work-tag mono">SIM</span>
+          <svg viewBox="0 0 50 50" class="work-deco"><use href="#doodleWave"/></svg>
+          <span class="work-num mono">/06</span>
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title" data-en="Fluid &amp; Cloth Simulation">محاكاة سوائل وأنسجة</h3>
+          <p class="work-desc mono">Fluid &amp; Cloth Sim · Houdini</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================== TOOLS ============================== -->
+  <section class="section tools-section" id="tools">
+    <header class="section-head">
+      <span class="section-num mono">05</span>
+      <h2 class="section-title">
+        <span data-en="Tools">الأدوات</span>
+        <span class="mono section-en">/ toolbox</span>
+      </h2>
+    </header>
+
+    <div class="tools-grid four-up" data-reveal="stagger">
+      <div class="tool">
+        <svg viewBox="0 0 24 24" class="tool-logo" style="color:#E87D0D"><use href="#logoBlender"/></svg>
+        <span class="tool-name">Blender</span>
+        <span class="tool-desc mono">3D · MODELING · ANIMATION</span>
+      </div>
+      <div class="tool">
+        <svg viewBox="0 0 24 24" class="tool-logo" style="color:var(--text)"><use href="#logoNuke"/></svg>
+        <span class="tool-name">Nuke</span>
+        <span class="tool-desc mono">VFX · COMPOSITING</span>
+      </div>
+      <div class="tool">
+        <svg viewBox="0 0 24 24" class="tool-logo" style="color:#FF4713"><use href="#logoHoudini"/></svg>
+        <span class="tool-name">Houdini</span>
+        <span class="tool-desc mono">PROCEDURAL · SIM</span>
+      </div>
+      <div class="tool">
+        <svg viewBox="0 0 24 24" class="tool-logo"><use href="#logoAE"/></svg>
+        <span class="tool-name">After Effects</span>
+        <span class="tool-desc mono">MOTION · COMPO</span>
+      </div>
+      <div class="tool">
+        <svg viewBox="0 0 24 24" class="tool-logo"><use href="#logoPS"/></svg>
+        <span class="tool-name">Photoshop</span>
+        <span class="tool-desc mono">PHOTO · MATTE PAINT</span>
+      </div>
+      <div class="tool">
+        <svg viewBox="0 0 24 24" class="tool-logo"><use href="#logoAI"/></svg>
+        <span class="tool-name">Illustrator</span>
+        <span class="tool-desc mono">VECTOR · DESIGN</span>
+      </div>
+      <div class="tool">
+        <svg viewBox="0 0 24 24" class="tool-logo" style="color:var(--text)"><use href="#logoDavinci"/></svg>
+        <span class="tool-name">DaVinci Resolve</span>
+        <span class="tool-desc mono">COLOR GRADING · EDIT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== PROCESS ============================== -->
+  <section class="section process" id="process">
+    <header class="section-head">
+      <span class="section-num mono">06</span>
+      <h2 class="section-title">
+        <span data-en="The Process">الـ Process</span>
+        <span class="mono section-en">/ workflow</span>
+      </h2>
+    </header>
+
+    <ol class="process-steps">
+      <li class="step" data-reveal="up">
+        <span class="step-num">01</span>
+        <svg viewBox="0 0 50 50" class="step-doodle"><use href="#doodleSparkle"/></svg>
+        <h3 class="step-title" data-en="Concept">الفكرة</h3>
+        <span class="step-en mono">CONCEPT</span>
+        <p data-en="We start from the brief, define the visual reference, and sketch the overall framework of the project.">نبدأ من البريف، نحدد المرجع البصري، ونرسم الإطار العام للمشروع.</p>
+      </li>
+      <li class="step" data-reveal="up">
+        <span class="step-num">02</span>
+        <svg viewBox="0 0 50 50" class="step-doodle"><use href="#doodleBurst"/></svg>
+        <h3 class="step-title" data-en="Production">الإنتاج</h3>
+        <span class="step-en mono">PRODUCTION</span>
+        <p data-en="Modeling, animation, simulation, lighting, rendering — every step with high precision and organized files.">نمذجة، تحريك، محاكاة، إضاءة، رندر — كل خطوة بدقة عالية وملفات منظمة.</p>
+      </li>
+      <li class="step" data-reveal="up">
+        <span class="step-num">03</span>
+        <svg viewBox="0 0 50 50" class="step-doodle"><use href="#doodleArrow"/></svg>
+        <h3 class="step-title" data-en="Delivery">التسليم</h3>
+        <span class="step-en mono">DELIVERY</span>
+        <p data-en="Final compositing, color grading, export in multiple formats, and a review with the client before delivery.">تركيب نهائي، تعديل ألوان، تصدير بصيغ متعددة، ومراجعة مع العميل قبل التسليم.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============================== CONTACT ============================== -->
+  <section class="section contact" id="contact">
+    <div class="contact-bg" aria-hidden="true"></div>
+
+    <header class="section-head">
+      <span class="section-num mono">07</span>
+      <h2 class="section-title">
+        <span data-en="Contact">تواصل</span>
+        <span class="mono section-en">/ contact</span>
+      </h2>
+    </header>
+
+    <div class="contact-content">
+      <h3 class="contact-headline" data-en="Got a <span class='cyan'>project</span>? Let's <span class='accent'>talk</span>.">
+        <span>عندك </span>
+        <span class="cyan">مشروع</span>
+        <span>؟ تعالى </span>
+        <span class="accent">نتكلم</span>.
+      </h3>
+      <p class="contact-sub mono">FOR COLLABS · COMMISSIONS · TUTORIALS · CONSULTING</p>
+
+      <a href="mailto:hello@pixelarabi.com" class="contact-email">
+        <span class="mono">hello@</span><span>pixelarabi.com</span>
+        <span class="contact-arrow">↖</span>
+      </a>
+
+      <ul class="socials">
+        <!-- ضع رابط قناتك بدل # -->
+        <li><a href="#" aria-label="YouTube"><span class="mono">YT</span> <span>YouTube</span></a></li>
+        <li><a href="https://www.behance.net/yahiaelsaber" target="_blank" rel="noopener" aria-label="Behance"><span class="mono">Bē</span> <span>Behance</span></a></li>
+        <li><a href="https://www.linkedin.com/in/yahiaelsaber/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="mono">in</span> <span>LinkedIn</span></a></li>
+        <!-- ضع رابط تويتر بدل # -->
+        <li><a href="#" aria-label="X / Twitter"><span class="mono">X</span> <span>Twitter</span></a></li>
+        <!-- ضع رابط فيسبوك بدل # -->
+        <li><a href="#" aria-label="Facebook"><span class="mono">f</span> <span>Facebook</span></a></li>
+      </ul>
+
+      <svg class="contact-doodle cd1" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleSparkle"/></svg>
+      <svg class="contact-doodle cd2" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleBurst"/></svg>
+      <svg class="contact-doodle cd3" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleDiamond"/></svg>
+    </div>
+  </section>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="footer-row">
+      <a href="#top" class="footer-brand">
+        <svg viewBox="0 0 100 100" width="28" height="28"><use href="#pixelIcon"/></svg>
+        <span><span>بيكسل </span><span class="cyan">بالعربي</span></span>
+      </a>
+      <p class="footer-tag mono">DESIGN · VFX · 3D · بالعربي</p>
+      <p class="footer-copy mono">© 2026 · PIXEL ARABI · ALL RIGHTS RESERVED</p>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono">v1.0</span>
+      <span class="mono">CRAFTED WITH <span class="cyan">▲</span> AND PIXELS</span>
+      <span class="mono">RTL · AR · EN</span>
+    </div>
+  </footer>
+
+  <!-- back to top -->
+  <a href="#top" class="back-top" aria-label="Back to top">
+    <svg viewBox="0 0 100 100" width="32" height="32"><use href="#pixelIcon"/></svg>
+  </a>
+
+  <!-- ============================ SVG SPRITES ============================ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+
+      <!-- Main 5x5 pixel icon -->
+      <symbol id="pixelIcon" viewBox="0 0 100 100">
+        <!-- Row 0: P P P M M -->
+        <rect x="2"  y="2"  width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="20" y="2"  width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="38" y="2"  width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="56" y="2"  width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="74" y="2"  width="16" height="16" rx="3" fill="var(--muted)"/>
+        <!-- Row 1: P M M P M -->
+        <rect x="2"  y="20" width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="20" y="20" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="38" y="20" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="56" y="20" width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="74" y="20" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <!-- Row 2: P P P M M -->
+        <rect x="2"  y="38" width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="20" y="38" width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="38" y="38" width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="56" y="38" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="74" y="38" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <!-- Row 3: P M M M M -->
+        <rect x="2"  y="56" width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="20" y="56" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="38" y="56" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="56" y="56" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="74" y="56" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <!-- Row 4: P M M A A -->
+        <rect x="2"  y="74" width="16" height="16" rx="3" fill="var(--primary)"/>
+        <rect x="20" y="74" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="38" y="74" width="16" height="16" rx="3" fill="var(--muted)"/>
+        <rect x="56" y="74" width="16" height="16" rx="3" fill="var(--accent)"/>
+        <rect x="74" y="74" width="16" height="16" rx="3" fill="var(--accent)"/>
+      </symbol>
+
+      <!-- Doodles -->
+      <symbol id="doodleSparkle" viewBox="0 0 50 50">
+        <g stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round">
+          <line x1="25" y1="4"  x2="25" y2="46"/>
+          <line x1="4"  y1="25" x2="46" y2="25"/>
+          <line x1="10" y1="10" x2="40" y2="40"/>
+          <line x1="10" y1="40" x2="40" y2="10"/>
+        </g>
+      </symbol>
+
+      <symbol id="doodleBurst" viewBox="0 0 50 50">
+        <g stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round">
+          <line x1="25" y1="6" x2="25" y2="16"/>
+          <line x1="25" y1="34" x2="25" y2="44"/>
+          <line x1="6" y1="25" x2="16" y2="25"/>
+          <line x1="34" y1="25" x2="44" y2="25"/>
+          <line x1="12" y1="12" x2="19" y2="19"/>
+          <line x1="31" y1="31" x2="38" y2="38"/>
+          <line x1="38" y1="12" x2="31" y2="19"/>
+          <line x1="19" y1="31" x2="12" y2="38"/>
+        </g>
+      </symbol>
+
+      <symbol id="doodleDots" viewBox="0 0 50 50">
+        <circle cx="10" cy="25" r="3" fill="currentColor"/>
+        <circle cx="25" cy="25" r="3" fill="currentColor"/>
+        <circle cx="40" cy="25" r="3" fill="currentColor"/>
+      </symbol>
+
+      <symbol id="doodleDiamond" viewBox="0 0 50 50">
+        <polygon points="25,6 44,25 25,44 6,25" stroke="currentColor" stroke-width="3" fill="none" stroke-linejoin="round"/>
+      </symbol>
+
+      <symbol id="doodleWave" viewBox="0 0 50 50">
+        <path d="M 4 25 Q 14 10, 25 25 T 46 25" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <symbol id="doodleArrow" viewBox="0 0 50 50">
+        <g stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="10" y1="40" x2="40" y2="10"/>
+          <polyline points="22,10 40,10 40,28"/>
+        </g>
+      </symbol>
+
+      <!-- Pixel-style icons for Tools (7x7 grids, simplified) -->
+      <symbol id="iconCube" viewBox="0 0 50 50">
+        <g fill="currentColor">
+          <rect x="14" y="6"  width="6" height="6" rx="1"/>
+          <rect x="22" y="6"  width="6" height="6" rx="1"/>
+          <rect x="30" y="6"  width="6" height="6" rx="1"/>
+          <rect x="6"  y="14" width="6" height="6" rx="1"/>
+          <rect x="38" y="14" width="6" height="6" rx="1"/>
+          <rect x="6"  y="22" width="6" height="6" rx="1"/>
+          <rect x="38" y="22" width="6" height="6" rx="1"/>
+          <rect x="6"  y="30" width="6" height="6" rx="1"/>
+          <rect x="38" y="30" width="6" height="6" rx="1"/>
+          <rect x="14" y="38" width="6" height="6" rx="1"/>
+          <rect x="22" y="38" width="6" height="6" rx="1"/>
+          <rect x="30" y="38" width="6" height="6" rx="1"/>
+        </g>
+        <g fill="var(--accent)">
+          <rect x="22" y="22" width="6" height="6" rx="1"/>
+        </g>
+      </symbol>
+
+      <symbol id="iconBolt" viewBox="0 0 50 50">
+        <g fill="currentColor">
+          <rect x="30" y="6"  width="6" height="6" rx="1"/>
+          <rect x="22" y="14" width="6" height="6" rx="1"/>
+          <rect x="30" y="14" width="6" height="6" rx="1"/>
+          <rect x="14" y="22" width="6" height="6" rx="1"/>
+          <rect x="22" y="22" width="6" height="6" rx="1"/>
+          <rect x="30" y="22" width="6" height="6" rx="1"/>
+          <rect x="22" y="30" width="6" height="6" rx="1"/>
+        </g>
+        <g fill="var(--accent)">
+          <rect x="14" y="38" width="6" height="6" rx="1"/>
+          <rect x="6"  y="38" width="6" height="6" rx="1"/>
+        </g>
+      </symbol>
+
+      <symbol id="iconFilm" viewBox="0 0 50 50">
+        <g fill="currentColor">
+          <rect x="6"  y="6"  width="6" height="6" rx="1"/>
+          <rect x="14" y="6"  width="6" height="6" rx="1"/>
+          <rect x="22" y="6"  width="6" height="6" rx="1"/>
+          <rect x="30" y="6"  width="6" height="6" rx="1"/>
+          <rect x="38" y="6"  width="6" height="6" rx="1"/>
+          <rect x="6"  y="22" width="32" height="6" rx="1"/>
+          <rect x="6"  y="38" width="6" height="6" rx="1"/>
+          <rect x="14" y="38" width="6" height="6" rx="1"/>
+          <rect x="22" y="38" width="6" height="6" rx="1"/>
+          <rect x="30" y="38" width="6" height="6" rx="1"/>
+          <rect x="38" y="38" width="6" height="6" rx="1"/>
+        </g>
+        <g fill="var(--accent)">
+          <rect x="14" y="14" width="6" height="6" rx="1"/>
+          <rect x="30" y="14" width="6" height="6" rx="1"/>
+          <rect x="14" y="30" width="6" height="6" rx="1"/>
+          <rect x="30" y="30" width="6" height="6" rx="1"/>
+        </g>
+      </symbol>
+
+      <symbol id="iconBrush" viewBox="0 0 50 50">
+        <g fill="currentColor">
+          <rect x="38" y="6"  width="6" height="6" rx="1"/>
+          <rect x="30" y="14" width="6" height="6" rx="1"/>
+          <rect x="22" y="22" width="6" height="6" rx="1"/>
+          <rect x="14" y="30" width="6" height="6" rx="1"/>
+        </g>
+        <g fill="var(--accent)">
+          <rect x="6"  y="38" width="6" height="6" rx="1"/>
+          <rect x="14" y="38" width="6" height="6" rx="1"/>
+          <rect x="6"  y="30" width="6" height="6" rx="1"/>
+        </g>
+      </symbol>
+
+      <symbol id="iconLayers" viewBox="0 0 50 50">
+        <g fill="currentColor">
+          <rect x="14" y="6"  width="6" height="6" rx="1"/>
+          <rect x="22" y="6"  width="6" height="6" rx="1"/>
+          <rect x="30" y="6"  width="6" height="6" rx="1"/>
+          <rect x="6"  y="22" width="6" height="6" rx="1"/>
+          <rect x="14" y="22" width="6" height="6" rx="1"/>
+          <rect x="22" y="22" width="6" height="6" rx="1"/>
+          <rect x="30" y="22" width="6" height="6" rx="1"/>
+          <rect x="38" y="22" width="6" height="6" rx="1"/>
+        </g>
+        <g fill="var(--accent)">
+          <rect x="6"  y="38" width="38" height="6" rx="1"/>
+        </g>
+      </symbol>
+
+      <symbol id="iconCamera" viewBox="0 0 50 50">
+        <g fill="currentColor">
+          <rect x="14" y="6"  width="22" height="6" rx="1"/>
+          <rect x="6"  y="14" width="38" height="6" rx="1"/>
+          <rect x="6"  y="34" width="38" height="6" rx="1"/>
+          <rect x="6"  y="22" width="6"  height="12" rx="1"/>
+          <rect x="38" y="22" width="6"  height="12" rx="1"/>
+        </g>
+        <g fill="var(--accent)">
+          <rect x="22" y="22" width="6" height="6" rx="1"/>
+          <rect x="22" y="28" width="6" height="6" rx="1"/>
+        </g>
+      </symbol>
+
+      <!-- ===== Official software logos ===== -->
+      <symbol id="logoBlender" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.424 3.424 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79.592.5.983 1.206 1.028 2.005.045.823-.285 1.586-.865 2.153a3.389 3.389 0 0 1-2.374.938 3.393 3.393 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.372 7.372 0 0 0 1.593 2.757 8.227 8.227 0 0 0 2.787 2.001 8.947 8.947 0 0 0 3.66.76 8.964 8.964 0 0 0 3.657-.772 8.285 8.285 0 0 0 2.785-2.01 7.428 7.428 0 0 0 1.592-2.762 6.964 6.964 0 0 0 .25-3.074 7.123 7.123 0 0 0-1.016-2.779 7.764 7.764 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002-.547.382-.609 1.015-.123 1.415l-.001.001 3.126 2.543-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01-8.62 6.617-.034.025c-.813.622-1.075 1.658-.563 2.313.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55-1.47.004-2.827-.552-3.797-1.538a4.51 4.51 0 0 1-1.036-1.622 4.282 4.282 0 0 1 .282-3.519 4.702 4.702 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185 1.256-.002 2.455.41 3.398 1.175.48.391.87.854 1.152 1.367a4.28 4.28 0 0 1 .522 1.706 4.236 4.236 0 0 1-.239 1.811 4.54 4.54 0 0 1-1.035 1.626"/>
+      </symbol>
+
+      <symbol id="logoHoudini" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M0 19.635V24h3.824A8.662 8.662 0 0 1 0 19.635zm16.042-4.555c0-4.037-3.253-7.92-8.111-8.089C4.483 6.873 1.801 8.136 0 10.005v4.209c1.224-3.549 4.595-5.158 7.419-5.128 3.531.041 6.251 2.703 6.275 5.72 0 2.878-1.183 4.992-4.436 5.516-1.774.296-4.548-.754-4.436-3.434.065-1.381 1.138-2.162 2.366-2.106-1.207 1.618.39 2.801 1.52 2.561a2.51 2.51 0 0 0 1.966-2.502c0-1.017-.958-2.662-3.333-2.6-2.936.068-4.785 2.183-4.85 4.797-.071 3.28 3.007 5.457 6.174 5.483 4.633.059 7.395-2.984 7.377-7.441zM0 0v6.906a12.855 12.855 0 0 1 7.931-2.609c6.801 0 11.134 4.762 11.131 10.765 0 4.17-1.946 7.308-4.995 8.938H24V0H0z"/>
+      </symbol>
+
+      <symbol id="logoNuke" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12.293.004c6.625.162 11.865 5.664 11.703 12.29-.162 6.625-5.664 11.865-12.29 11.703C5.081 23.835-.159 18.333.003 11.707l.001-.025C.18 5.066 5.678-.158 12.293.004zm0 1.238c-5.941-.164-10.89 4.52-11.054 10.461s4.52 10.89 10.461 11.054c5.941.164 10.89-4.52 11.054-10.461l.001-.025c.15-5.932-4.53-10.866-10.462-11.029zm5.842 8.302h2.4c.976 0 .682-.873.682-.873a9.587 9.587 0 0 0-2.111-3.431l-.005.011a10.052 10.052 0 0 0-3.355-2.329.612.612 0 0 0-.894.622c-.044.802-.142 2.395-.142 2.395s.016.769-.627.769c-.813.011-1.489-.044-1.489-.044a2.314 2.314 0 0 1-1.255-.545L8.868 3.511a1.09 1.09 0 0 0-1.407-.196 9.758 9.758 0 0 0-4.713 5.384c-.256.714.333.806.731.806h6a2.086 2.086 0 0 1 1.68.627c.785.824 1.331 1.369 1.331 1.369s.48.54 1.26 1.358c.431.459.632 1.089.545 1.713 0 0-.295 5.744-.295 6-.027.398.038.993.769.775a9.756 9.756 0 0 0 5.618-4.424 1.091 1.091 0 0 0-.12-1.418l-2.471-2.607a2.303 2.303 0 0 1-.496-1.282s-.022-.682.033-1.489c.044-.643.802-.583.802-.583zm-2.362 1.374c-.475.469-1.484.229-2.22-.545-.736-.775-.924-1.801-.45-2.254.475-.453 1.502-.239 2.239.536.737.774.906 1.794.431 2.263z"/>
+      </symbol>
+
+      <!-- After Effects icon (recreated in its classic indigo + Ae style) -->
+      <symbol id="logoAE" viewBox="0 0 24 24">
+        <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#00005B"/>
+        <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="none" stroke="#5151C6" stroke-width="0.6"/>
+        <text x="12" y="15.8" font-family="'JetBrains Mono', Arial, sans-serif" font-weight="700" font-size="9.5" fill="#9A9CFF" text-anchor="middle">Ae</text>
+      </symbol>
+
+      <!-- Photoshop icon (Adobe classic Ps style) -->
+      <symbol id="logoPS" viewBox="0 0 24 24">
+        <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#001E36"/>
+        <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="none" stroke="#0A4A7A" stroke-width="0.6"/>
+        <text x="12" y="15.8" font-family="'JetBrains Mono', Arial, sans-serif" font-weight="700" font-size="9.5" fill="#31A8FF" text-anchor="middle">Ps</text>
+      </symbol>
+
+      <!-- Illustrator icon (Adobe classic Ai style) -->
+      <symbol id="logoAI" viewBox="0 0 24 24">
+        <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#330000"/>
+        <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="none" stroke="#7A4A00" stroke-width="0.6"/>
+        <text x="12" y="15.8" font-family="'JetBrains Mono', Arial, sans-serif" font-weight="700" font-size="9.5" fill="#FF9A00" text-anchor="middle">Ai</text>
+      </symbol>
+
+      <!-- DaVinci Resolve official logo -->
+      <symbol id="logoDavinci" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M17.621 0 5.977.004c-1.37 0-2.756.345-3.762 1.11a4.925 4.925 0 0 0-1.61 2.003C.233 3.93 0 5.02 0 5.951l.012 12.2c.002 1.604.479 3.057 1.461 4.112.984 1.056 2.462 1.683 4.331 1.691L16.856 24c1.26.005 3.095-.036 4.303-.714 1.075-.605 2.025-1.556 2.497-2.984.278-.84.345-2.084.344-3.147l-.021-11.13c-.002-.888-.15-2.023-.547-2.934-.425-.976-1.181-1.815-2.322-2.425C20.353.26 19.123 0 17.622 0zm0 .93c1.378 0 2.538.295 3.04.565.977.523 1.544 1.166 1.889 1.96.315.721.47 1.793.473 2.572l.018 11.13c.002 1.013-.097 2.257-.298 2.86-.396 1.202-1.146 1.946-2.063 2.462-.814.457-2.612.593-3.82.588l-11.05-.044c-1.657-.007-2.832-.534-3.626-1.386-.792-.851-1.212-2.06-1.212-3.485L.999 5.95c0-.829.196-1.827.474-2.437.345-.757.75-1.207 1.365-1.674C3.585 1.27 4.868.97 6.08.97zm-5.66 3.423c-1.976.089-3.204 1.658-3.214 3.29.019 1.443 1.635 3.481 2.884 4.53.12.099.154.109.33.18.062.025.198-.047.327-.135.36-.245.993-.947 1.648-1.738a7.67 7.67 0 0 0 1.031-1.683c.409-.89.261-1.599.235-1.888a3.983 3.983 0 0 0-.99-1.692 3.36 3.36 0 0 0-2.251-.864zm4.172 7.922a10.185 10.185 0 0 0-3.244.61c-.15.058-.26.1-.374.17-.057.036-.11.135-.105.292.017.433.29 1.278.624 2.27.384 1.135 1.066 2.27 1.844 2.74a3.23 3.23 0 0 0 2.53.342c.832-.243 1.595-.868 1.962-1.546.986-1.818.19-3.548-1.121-4.417-.447-.296-1.133-.445-1.89-.46-.074 0-.15-.002-.226-.001zm-8.432.038a6.201 6.201 0 0 0-.752.047c-.596.078-.932.273-1.29.51a3.177 3.177 0 0 0-1.365 1.979c-.075.552-.086 1.053.033 1.507.433 1.389 1.326 2.222 2.847 2.452.636.028 1.37-.063 1.99-.45 1.269-.782 2.08-3.17 2.412-4.742.053-.176.035-.357-.013-.42-.005-.067-.044-.113-.19-.183-.398-.192-1.32-.417-2.375-.6a7.68 7.68 0 0 0-1.297-.1z"/>
+      </symbol>
+
+    </defs>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>
