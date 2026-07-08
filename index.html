@@ -137,15 +137,21 @@
     </div>
 
     <div class="hero-inner">
-      <div class="hero-icon-wrap" data-reveal="icon">
+      <div class="hero-photo-wrap" data-reveal="icon">
         <div class="hero-icon-glow" aria-hidden="true"></div>
-        <svg viewBox="0 0 100 100" class="hero-icon" role="img" aria-label="Pixel Arabi logo">
-          <use href="#pixelIcon" />
-        </svg>
-        <!-- floating doodles around icon -->
-        <svg class="float-doodle d1" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleSparkle"/></svg>
-        <svg class="float-doodle d2" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleBurst"/></svg>
-        <svg class="float-doodle d3" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleDots"/></svg>
+
+        <!-- floating elements above the photo -->
+        <svg class="float-doodle p-top1" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleSparkle"/></svg>
+        <span class="float-chip p-top2 mono">VFX</span>
+        <svg class="float-doodle p-top3" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleDiamond"/></svg>
+
+        <!-- ضع اسم صورتك هنا بدل my-photo.png (فضّل PNG بخلفية شفافة/مقصوصة) -->
+        <img src="my-photo.png" alt="Yahia — بيكسل بالعربي" class="hero-photo" />
+
+        <!-- floating elements below the photo -->
+        <svg class="float-doodle p-bot1" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleBurst"/></svg>
+        <span class="float-chip p-bot2 mono">3D</span>
+        <svg class="float-doodle p-bot3" viewBox="0 0 50 50" aria-hidden="true"><use href="#doodleDots"/></svg>
       </div>
 
       <h1 class="hero-title">

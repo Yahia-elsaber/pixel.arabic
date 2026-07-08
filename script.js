@@ -99,7 +99,7 @@
   }
 
   /* ----------- 5 · Subtle parallax on hero icon ----------- */
-  const heroIconWrap = document.querySelector('.hero-icon-wrap');
+  const heroIconWrap = document.querySelector('.hero-photo-wrap');
   if (heroIconWrap && window.matchMedia('(min-width: 768px)').matches) {
     let ticking = false;
     const onScroll = () => {
