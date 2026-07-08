@@ -11,6 +11,16 @@
   <meta property="og:title" content="بيكسل بالعربي · Pixel Arabi" />
   <meta property="og:description" content="Design · VFX · 3D — قناة عربية للمصممين ومحترفي الـ VFX والـ 3D." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pixelarabi.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ar_AR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="بيكسل بالعربي · Pixel Arabi" />
+  <meta name="twitter:description" content="Design · VFX · 3D — قناة عربية للمصممين ومحترفي الـ VFX والـ 3D." />
+  <meta name="twitter:image" content="https://pixelarabi.com/og-image.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,8 +29,42 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Favicon: inline SVG of pixel icon -->
+  <!-- Structured data: helps Google understand this is a designer/VFX artist portfolio -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yahia Elsaber",
+    "alternateName": "Pixel Arabi",
+    "jobTitle": "Designer & VFX Artist",
+    "url": "https://pixelarabi.com",
+    "sameAs": [
+      "https://www.youtube.com/@Pixel.Arabic",
+      "https://www.facebook.com/pixel.arabic/",
+      "https://www.behance.net/yahiaelsaber",
+      "https://www.linkedin.com/in/yahiaelsaber/"
+    ],
+    "knowsAbout": ["VFX", "3D", "Blender", "Motion Design", "Compositing"]
+  }
+  </script>
+
+  <!-- Google Analytics (GA4) — استبدل G-XXXXXXXXXX برقم الـ Measurement ID بتاعك -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Favicon: SVG (modern browsers) + PNG/ICO fallbacks (older browsers, tabs, bookmarks) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 5'%3E%3Crect width='5' height='5' fill='%23060708'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%236E5BFF'/%3E%3Crect x='3' y='4' width='1' height='1' fill='%2323D5AB'/%3E%3Crect x='4' y='4' width='1' height='1' fill='%2323D5AB'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
 </head>
 <body>
 
@@ -71,6 +115,12 @@
         <span class="status-dot"></span>
         <span class="status-text" data-en="Available for work">متاح لاستقبال مشاريع</span>
       </span>
+      <a href="https://www.youtube.com/@Pixel.Arabic" target="_blank" rel="noopener" class="nav-youtube" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
     </div>
   </header>
 

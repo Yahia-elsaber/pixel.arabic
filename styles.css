@@ -454,6 +454,19 @@ button { font-family: inherit; }
   100% { box-shadow: 0 0 0 0 rgba(110, 91, 255, 0); }
 }
 
+.nav-youtube {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  color: var(--text);
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.nav-youtube:hover { border-color: #FF0000; color: #FF0000; }
+
 /* ---------------------- 6 · HERO ------------------------ */
 .hero {
   position: relative;
