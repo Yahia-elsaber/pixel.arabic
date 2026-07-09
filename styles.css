@@ -512,10 +512,10 @@ button { font-family: inherit; }
   max-width: 1100px;
 }
 
-.hero-photo-wrap {
+.hero-icon-wrap {
   position: relative;
-  width: clamp(200px, 26vw, 320px);
-  height: clamp(200px, 26vw, 320px);
+  width: clamp(160px, 22vw, 240px);
+  height: clamp(160px, 22vw, 240px);
 }
 .hero-icon-glow {
   position: absolute;
@@ -524,15 +524,7 @@ button { font-family: inherit; }
   filter: blur(30px);
   z-index: -1;
 }
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: bottom;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.45));
-}
+.hero-icon { width: 100%; height: 100%; }
 
 .float-doodle {
   position: absolute;
@@ -542,10 +534,9 @@ button { font-family: inherit; }
   z-index: 3;
   animation: float 6s infinite ease-in-out;
 }
-.float-doodle.p-top1 { top: -10%;  left: 4%;   color: var(--accent);  animation-delay: 0s; }
-.float-doodle.p-top3 { top: -14%;  right: 6%;  color: var(--primary); animation-delay: 1.6s; }
-.float-doodle.p-bot1 { bottom: -8%; right: 8%;  color: var(--primary); animation-delay: 0.8s; }
-.float-doodle.p-bot3 { bottom: -12%; left: 8%;  color: var(--subtext); animation-delay: 2.2s; }
+.float-doodle.d1 { top: -10%; right: -15%; color: var(--accent); animation-delay: 0s; }
+.float-doodle.d2 { bottom: -5%; left: -18%; color: var(--primary); animation-delay: 1.2s; }
+.float-doodle.d3 { top: 40%; right: -25%; color: var(--subtext); animation-delay: 2.4s; }
 
 .float-chip {
   position: absolute;
@@ -561,8 +552,6 @@ button { font-family: inherit; }
   z-index: 3;
   animation: float 7s infinite ease-in-out;
 }
-.float-chip.p-top2 { top: -22%; left: 34%; color: var(--accent);  border-color: var(--accent);  animation-delay: 0.4s; }
-.float-chip.p-bot2 { bottom: -24%; left: 40%; color: var(--primary); border-color: var(--primary); animation-delay: 1.4s; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0); }
@@ -766,6 +755,15 @@ button { font-family: inherit; }
   position: sticky;
   top: 100px;
 }
+
+/* floating elements around the prepared photo frame */
+.about-photo .float-doodle.a-top1 { top: -16px;  left: 4%;   color: var(--accent);  animation-delay: 0s; }
+.about-photo .float-doodle.a-top3 { top: -20px;  right: 8%;  color: var(--primary); animation-delay: 1.6s; }
+.about-photo .float-doodle.a-bot1 { bottom: 78px; right: -14px; color: var(--primary); animation-delay: 0.8s; }
+.about-photo .float-doodle.a-bot3 { bottom: 108px; left: -14px;  color: var(--subtext); animation-delay: 2.2s; }
+.about-photo .float-chip.a-top2 { top: -30px;  left: 36%; color: var(--accent);  border-color: var(--accent);  animation-delay: 0.4s; }
+.about-photo .float-chip.a-bot2 { bottom: 88px; left: 40%; color: var(--primary); border-color: var(--primary); animation-delay: 1.4s; }
+
 .photo-frame {
   position: relative;
   aspect-ratio: 4 / 5;
