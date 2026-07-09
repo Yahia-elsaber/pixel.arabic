@@ -531,11 +531,28 @@ button { font-family: inherit; }
   width: 28px; height: 28px;
   color: var(--accent);
   opacity: 0.85;
+  z-index: 3;
   animation: float 6s infinite ease-in-out;
 }
 .float-doodle.d1 { top: -10%; right: -15%; color: var(--accent); animation-delay: 0s; }
 .float-doodle.d2 { bottom: -5%; left: -18%; color: var(--primary); animation-delay: 1.2s; }
 .float-doodle.d3 { top: 40%; right: -25%; color: var(--subtext); animation-delay: 2.4s; }
+
+.float-chip {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+  z-index: 3;
+  animation: float 7s infinite ease-in-out;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0); }
   50%      { transform: translateY(-12px) rotate(8deg); }
@@ -738,6 +755,15 @@ button { font-family: inherit; }
   position: sticky;
   top: 100px;
 }
+
+/* floating elements around the prepared photo frame */
+.about-photo .float-doodle.a-top1 { top: -16px;  left: 4%;   color: var(--accent);  animation-delay: 0s; }
+.about-photo .float-doodle.a-top3 { top: -20px;  right: 8%;  color: var(--primary); animation-delay: 1.6s; }
+.about-photo .float-doodle.a-bot1 { bottom: 78px; right: -14px; color: var(--primary); animation-delay: 0.8s; }
+.about-photo .float-doodle.a-bot3 { bottom: 108px; left: -14px;  color: var(--subtext); animation-delay: 2.2s; }
+.about-photo .float-chip.a-top2 { top: -30px;  left: 36%; color: var(--accent);  border-color: var(--accent);  animation-delay: 0.4s; }
+.about-photo .float-chip.a-bot2 { bottom: 88px; left: 40%; color: var(--primary); border-color: var(--primary); animation-delay: 1.4s; }
+
 .photo-frame {
   position: relative;
   aspect-ratio: 4 / 5;
